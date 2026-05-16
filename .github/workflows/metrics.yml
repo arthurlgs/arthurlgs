@@ -1,0 +1,34 @@
+name: Metrics
+on:
+  # This runs the action automatically every day at midnight
+  schedule: [{cron: "0 0 * * *"}]
+  # This lets you run the action manually whenever you want
+  workflow_dispatch:
+  # This runs the action every time you push changes to your main branch
+  push: {branches: ["master", "main"]}
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          # This connects the action to your secure token
+          token: ${{ secrets.METRICS_TOKEN }}
+          
+          # Core config
+          user: arthurlgs
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: America/Sao_Paulo
+          
+          # Plugins to show your most used languages
+          plugin_languages: yes
+          plugin_languages_details: bytes-size, percentage
+          
+          # Forces dark mode to match your Tokyonight theme vibe
+          config_display: large
+          output_action: commit
+          committer_message: "chore: update profile metrics"
