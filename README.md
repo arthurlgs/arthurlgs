@@ -2,8 +2,7 @@
 
 <div>
   <a href="https://github.com/arthurlgs">
-    <img height="180" src="https://github-readme-stats.vercel.app/api?username=arthurlgs&show_icons=true&theme=tokyonight&include_all_commits=true" />
-    <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs?username=arthurlgs&layout=compact&langs_count=6&theme=tokyonight" />
+    <img src="./github-metrics.svg" alt="GitHub Metrics" />
   </a>
 </div>
 
